@@ -18,19 +18,19 @@ describe('GovernorAlpha', () => {
   const [wallet] = provider.getWallets()
   const loadFixture = createFixtureLoader([wallet], provider)
 
-  let uni: Contract
+  let vntw: Contract
   let timelock: Contract
   let governorAlpha: Contract
   beforeEach(async () => {
     const fixture = await loadFixture(governanceFixture)
-    uni = fixture.uni
+    vntw = fixture.vntw
     timelock = fixture.timelock
     governorAlpha = fixture.governorAlpha
   })
 
-  it('uni', async () => {
-    const balance = await uni.balanceOf(wallet.address)
-    const totalSupply = await uni.totalSupply()
+  it('VNTW', async () => {
+    const balance = await vntw.balanceOf(wallet.address)
+    const totalSupply = await vntw.totalSupply()
     expect(balance).to.be.eq(totalSupply)
   })
 
@@ -48,7 +48,7 @@ describe('GovernorAlpha', () => {
     expect(votingPeriod).to.be.eq(40320)
     const timelockAddress = await governorAlpha.timelock()
     expect(timelockAddress).to.be.eq(timelock.address)
-    const uniFromGovernor = await governorAlpha.uni()
-    expect(uniFromGovernor).to.be.eq(uni.address)
+    const vntwFromGovernor = await governorAlpha.vntw()
+    expect(vntwFromGovernor).to.be.eq(vntw.address)
   })
 })
