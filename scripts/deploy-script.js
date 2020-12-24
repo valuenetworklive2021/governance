@@ -32,7 +32,7 @@ async function main() {
   const infoTreasuryVester = await deployTreasuryVester(
     infoVNTW.instance.address, recipient, vestingAmount, vestingBegin, vestingCliff, vestingEnd
   );
-  await infoVNTW.instance.transfer(infoTreasuryVester.instance.address, vestingAmount);
+  await infoVNTW.instance.transfer(infoTreasuryVester.instance.address, vestingAmount); // ?!?
 
   const infoFeeTo = await deployFeeTo(owner, feeRecipient);
   const ValueswapV2Factory = '?!?';
