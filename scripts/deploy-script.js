@@ -9,7 +9,7 @@ async function main() {
   const owner = accounts[0].address;
   const feeRecipient = owner;
 
-  const mintingAllowedAfter = parseInt(new Date("2020-12-25T00:00:00.000Z").getTime()/1000);
+  const mintingAllowedAfter = parseInt(new Date("2020-12-22T00:00:00.000Z").getTime()/1000);
   const infoVNTW = await deployVNTW(owner, owner, mintingAllowedAfter);
 
   const infoTimelock = await deployTimelock(owner);
@@ -26,9 +26,9 @@ async function main() {
 
   const vestingAmount = '1000000000000000000000'; // 1000 VNTW
   const recipient = owner;
-  const vestingBegin = parseInt(new Date("2020-12-25T00:00:00.000Z").getTime()/1000);
-  const vestingCliff = parseInt(new Date("2020-12-25T01:00:00.000Z").getTime()/1000);
-  const vestingEnd = parseInt(new Date("2020-12-25T02:00:00.000Z").getTime()/1000);
+  const vestingBegin = parseInt(new Date("2020-12-12T00:00:00.000Z").getTime()/1000);
+  const vestingCliff = parseInt(new Date("2020-12-23T01:00:00.000Z").getTime()/1000);
+  const vestingEnd = parseInt(new Date("2020-12-27T02:00:00.000Z").getTime()/1000);
   const infoTreasuryVester = await deployTreasuryVester(
     infoVNTW.instance.address, recipient, vestingAmount, vestingBegin, vestingCliff, vestingEnd
   );
