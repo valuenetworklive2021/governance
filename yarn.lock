@@ -751,10 +751,10 @@
   resolved "https://registry.yarnpkg.com/@ungap/promise-all-settled/-/promise-all-settled-1.1.2.tgz#aa58042711d6e3275dd37dc597e5d31e8c290a44"
   integrity sha512-sL/cEvJWAnClXw0wHk85/2L0G6Sj8UB0Ctc1TEMbKSsmpRosqhwj9gWgFRZSrBr2f9tiXISwNhCPmlfqUqyb9Q==
 
-"@valueswap/v2-core@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@valueswap/v2-core/-/v2-core-1.0.2.tgz#a8f51a1562ca2cf8e4537b430012333e3de5d423"
-  integrity sha512-WFSBhpSayOmctFQKOe7vBUvbmZrM8xU31Ck38CHElss5MajJgVzezOLIPAdIw97bhUNcOJ3VIs3Xucu+Ss41lw==
+"@valueswap/v2-core@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@valueswap/v2-core/-/v2-core-1.1.0.tgz#e98d42d3b601b199f2d0fcca10ac3b91222ef241"
+  integrity sha512-8voMwlwrSUdEloBAtBISgDfNgiOf8zA5SzfNl9+jhWtOruEzuxQz4SvCk1vDRM44PO5ysBXwb/XmHmLaFrnp1g==
 
 "@yarnpkg/lockfile@^1.1.0":
   version "1.1.0"

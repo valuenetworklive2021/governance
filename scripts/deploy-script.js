@@ -9,7 +9,7 @@ async function main() {
   const owner = accounts[0].address;
   const feeRecipient = owner;
 
-  const mintingAllowedAfter = parseInt(new Date("2020-12-22T00:00:00.000Z").getTime()/1000);
+  const mintingAllowedAfter = parseInt(new Date("2020-12-28T00:00:00.000Z").getTime()/1000);
   const infoVNTW = await deployVNTW(owner, owner, mintingAllowedAfter);
 
   const infoTimelock = await deployTimelock(owner);
@@ -21,14 +21,11 @@ async function main() {
   );
   await infoTimelock.instance.setAdmin(infoGovernorAlpha.instance.address);
 
-  //MerkleDistributor
-  //StakingRewardsFactory
-
   const vestingAmount = '1000000000000000000000'; // 1000 VNTW
   const recipient = owner;
-  const vestingBegin = parseInt(new Date("2020-12-12T00:00:00.000Z").getTime()/1000);
-  const vestingCliff = parseInt(new Date("2020-12-23T01:00:00.000Z").getTime()/1000);
-  const vestingEnd = parseInt(new Date("2020-12-27T02:00:00.000Z").getTime()/1000);
+  const vestingBegin = parseInt(new Date("2020-12-28T00:00:00.000Z").getTime()/1000);
+  const vestingCliff = parseInt(new Date("2020-12-28T01:00:00.000Z").getTime()/1000);
+  const vestingEnd = parseInt(new Date("2020-12-28T02:00:00.000Z").getTime()/1000);
   const infoTreasuryVester = await deployTreasuryVester(
     infoVNTW.instance.address, recipient, vestingAmount, vestingBegin, vestingCliff, vestingEnd
   );
@@ -100,10 +97,6 @@ async function deployGovernorAlpha(timelock, vntw) {
   return { name, arguments, instance, factory };
 }
 
-/*
-MerkleDistributor
-StakingRewardsFactory
-*/
 
 async function deployTreasuryVester(vntw, recipient, vestingAmount, vestingBegin, vestingCliff, vestingEnd) {
   const name = 'TreasuryVester';
