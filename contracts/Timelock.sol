@@ -28,20 +28,11 @@ contract Timelock {
         require(delay_ >= MINIMUM_DELAY, "Timelock::constructor: Delay must exceed minimum delay.");
         require(delay_ <= MAXIMUM_DELAY, "Timelock::setDelay: Delay must not exceed maximum delay.");
 
-        owner = admin_;
         admin = admin_;
         delay = delay_;
     }
 
     function() external payable { }
-
-    function setAdmin(address admin_) public {
-        require(msg.sender == owner, "Timelock::setAdmin: Not permissions.");
-        require(msg.sender == admin, "Timelock::setAdmin: Not permissions.");
-        admin = admin_;
-
-        emit NewAdmin(admin);
-    }
 
     function setDelay(uint delay_) public {
         require(msg.sender == address(this), "Timelock::setDelay: Call must come from Timelock.");
@@ -61,7 +52,7 @@ contract Timelock {
     }
 
     function setPendingAdmin(address pendingAdmin_) public {
-        require(msg.sender == address(this), "Timelock::setPendingAdmin: Call must come from Timelock.");
+        require(msg.sender == admin, "Timelock::setPendingAdmin: Call must come from admin.");
         pendingAdmin = pendingAdmin_;
 
         emit NewPendingAdmin(pendingAdmin);
