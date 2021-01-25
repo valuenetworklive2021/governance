@@ -16,7 +16,6 @@ contract Timelock {
     uint public constant MINIMUM_DELAY = 2 days;
     uint public constant MAXIMUM_DELAY = 30 days;
 
-    address public owner;
     address public admin;
     address public pendingAdmin;
     uint public delay;
