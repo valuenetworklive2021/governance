@@ -2,7 +2,11 @@
   "name": "@valueswap/governance",
   "version": "1.1.0",
   "description": "🏛 Governance contracts for the Valueswap protocol",
-  "author": "Value Network",
+  "author": {
+    "name": "Value Network",
+    "email": "support@valuenetwork.live",
+    "url": "https://valuenetwork.live"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",

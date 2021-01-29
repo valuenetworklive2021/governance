@@ -32,7 +32,7 @@ async function main() {
   await infoVNTW.instance.transfer(infoTreasuryVester.instance.address, vestingAmount); // ?!?
 
   const infoFeeTo = await deployFeeTo(owner, feeRecipient);
-  const ValueswapV2Factory = '0x1f2b12Ef34ca629341F2F77440F0a55a115C86cB'; // FACTORY_ADDRESS
+  const ValueswapV2Factory = '0xF8CC7061b9286b16dF5909BF7969b50209A551E1'; // FACTORY_ADDRESS
   const feeTo = infoFeeTo.instance.address;
   const infoFeeToSetter = await deployFeeToSetter(ValueswapV2Factory, vestingEnd, owner, feeTo);
 }
